@@ -32,10 +32,10 @@ const AddTodo = () => {
       <h1 className="text-bold text-2xl md:text-4xl text-white my-5 md:my-10">
         To Do List
       </h1>
-      <div className="flex flex-nowrap w-full justify-center items-center ">
+      <div className="flex flex-nowrap w-full sm:max-w-lg  lg:max-w-4xl justify-center items-center ">
         <input
-          className={`w-full max-w-xl outline-none p-2 duration-1000 ${
-            error ? "border-red-500 placeholder:text-red-500" : ""
+          className={`w-full outline-none p-2 duration-1000 ${
+            error ? "border border-red-500 placeholder:text-red-500" : ""
           }`}
           placeholder="Title..."
           value={todoValue}

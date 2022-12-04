@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState: { todoList: {}[] } = {
+const initialState: { todoList: TodoType[] } = {
   todoList: [],
 }
 
