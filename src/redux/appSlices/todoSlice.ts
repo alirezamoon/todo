@@ -16,7 +16,15 @@ const todoSlice = createSlice({
         (todo) => todo.id !== action.payload
       )
     },
+    changeStatus(state, action) {
+      let newTodoList = [...state.todoList]
+      const index = state.todoList.findIndex(
+        (todo) => todo.id === action.payload.id
+      )
+      newTodoList[index].status = action.payload.status
+      state.todoList = newTodoList
+    },
   },
 })
-export const { addTodo, removeTodo } = todoSlice.actions
+export const { addTodo, removeTodo, changeStatus } = todoSlice.actions
 export default todoSlice.reducer
