@@ -15,7 +15,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "typeRoots": ["src/types/*.d.ts"],
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/appSlices/*": ["src/redux/appSlices/*"]
+    }
   },
   "include": ["src"]
 }
