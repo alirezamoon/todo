@@ -13,7 +13,7 @@ const AddTodo = () => {
     if (todoValue.trim() === "") {
       setError(true)
     } else {
-      dispatch(addTodo({ id: Date.now(), title: todoValue }))
+      dispatch(addTodo({ id: Date.now(), title: todoValue, status: "active" }))
       setTodoValue("")
       toast.success("todo added successfully.")
     }

@@ -1,14 +1,32 @@
-const TodoItem = ({ id, title }: TodoType) => {
+import { useDispatch } from "react-redux"
+import { removeTodo } from "src/redux/appSlices/todoSlice"
+import { toast } from "react-toastify"
+import { ChangeEvent } from "react"
+
+const TodoItem = ({ id, title, status }: TodoType) => {
+  const dispatch = useDispatch()
+
+  const removeTodoHandler = () => {
+    dispatch(removeTodo(id))
+    toast.success("todo removed successfully.")
+  }
+
   return (
     <div className="flex items-center justify-center bg-zinc-100 h-full min-h-[48px] border-b border-zinc-300 px-6 md:px-10">
       <div className="w-full sm:max-w-lg  lg:max-w-4xl flex items-center justify-between ">
         <div className="flex items-center">
-          <input type="checkbox" />
-          <p className="ml-2 overflow-x-hidden text-ellipsis max-w-md  lg:max-w-3xl">
+          <input type="checkbox" checked={status === "active" ? false : true} />
+          <p
+            className={`ml-2 overflow-x-hidden text-ellipsis max-w-md lg:max-w-3xl ${
+              status === "active" ? "" : "line-through"
+            }`}
+          >
             {title}
           </p>
         </div>
-        <img src="/assets/icons/remove.svg" />
+        <button onClick={removeTodoHandler}>
+          <img src="/assets/icons/remove.svg" />
+        </button>
       </div>
     </div>
   )
