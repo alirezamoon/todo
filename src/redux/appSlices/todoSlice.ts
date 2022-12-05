@@ -59,8 +59,19 @@ const todoSlice = createSlice({
       state.todoList = newTodoList
       state.currentCategory = action.payload
     },
+    removeDoneTodos(state) {
+      let newTodoList = [...state.todoListAll]
+      newTodoList = newTodoList.filter((todo) => todo.status === "active")
+      state.todoList = newTodoList
+      state.todoListAll = newTodoList
+    },
   },
 })
-export const { addTodo, removeTodo, changeStatus, categorizeTodos } =
-  todoSlice.actions
+export const {
+  addTodo,
+  removeTodo,
+  changeStatus,
+  categorizeTodos,
+  removeDoneTodos,
+} = todoSlice.actions
 export default todoSlice.reducer

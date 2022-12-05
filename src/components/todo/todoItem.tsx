@@ -19,7 +19,7 @@ const TodoItem = ({ id, title, status }: TodoType) => {
 
   return (
     <div
-      className={`flex items-center justify-center h-full min-h-[48px] border-b border-gray-400 [&:last-child]:border-0 px-6 md:px-10 ${
+      className={`flex items-center justify-center h-full min-h-[48px] py-1 border-b border-gray-400 [&:last-child]:border-0 px-2 sm:px-6 ${
         status === "active" ? "bg-gray-100" : "bg-gray-300"
       }`}
     >
@@ -38,7 +38,7 @@ const TodoItem = ({ id, title, status }: TodoType) => {
             {title}
           </p>
         </div>
-        <button onClick={removeTodoHandler}>
+        <button onClick={removeTodoHandler} className="min-w-[16px]">
           <img src="/assets/icons/remove.svg" />
         </button>
       </div>
