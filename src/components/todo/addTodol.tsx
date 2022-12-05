@@ -32,9 +32,9 @@ const AddTodo = () => {
       <h1 className="font-bold text-2xl md:text-4xl text-white my-5 md:my-10">
         To Do List
       </h1>
-      <div className="flex flex-nowrap w-full sm:max-w-lg  lg:max-w-4xl justify-center items-center ">
+      <div className="flex flex-nowrap flex-col sm:flex-row w-full sm:max-w-lg lg:max-w-4xl justify-center items-center rounded overflow-hidden">
         <input
-          className={`w-full outline-none p-2 duration-1000 ${
+          className={`w-full outline-none p-2 ${
             error ? "border border-red-500 placeholder:text-red-500" : ""
           }`}
           placeholder="Title..."
@@ -42,7 +42,7 @@ const AddTodo = () => {
           onChange={changeTodoValueHandler}
         />
         <button
-          className="bg-zinc-300 p-2 sm:px-10 text-gray-600"
+          className="w-full sm:w-28 bg-zinc-300 p-2 text-gray-600"
           onClick={addTodoHandler}
         >
           Submit

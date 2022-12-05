@@ -19,8 +19,8 @@ const TodoItem = ({ id, title, status }: TodoType) => {
 
   return (
     <div
-      className={`flex items-center justify-center h-full min-h-[48px] duration-100 py-1 border-b border-gray-400 [&:last-child]:border-0 px-2 sm:px-6 ${
-        status === "active" ? "bg-gray-100" : "bg-gray-300"
+      className={`flex items-center justify-center h-full min-h-[48px] duration-100 py-1 border-b border-gray-300 [&:last-child]:border-0 px-2 sm:px-6 ${
+        status === "active" ? "bg-gray-100" : "bg-gray-400"
       }`}
     >
       <div className="w-full sm:max-w-lg lg:max-w-4xl flex items-center justify-between ">
@@ -29,10 +29,11 @@ const TodoItem = ({ id, title, status }: TodoType) => {
             type="checkbox"
             checked={status === "active" ? false : true}
             onChange={todoStatusChendedHandler}
+            className="h-6 cursor-pointer"
           />
           <p
             className={`ml-2 overflow-x-hidden text-ellipsis max-w-md lg:max-w-3xl ${
-              status === "active" ? "" : "line-through"
+              status === "active" ? "" : "line-through text-white"
             }`}
           >
             {title}

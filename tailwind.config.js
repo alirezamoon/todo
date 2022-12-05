@@ -19,8 +19,8 @@ module.exports = {
         },
       },
       animation: {
-        addTodo: "addTodo 1s ease-in-out",
-        opacity: "opacity 1s ease-in-out",
+        addTodo: "addTodo 500ms ease-in-out",
+        opacity: "opacity 500ms ease-in-out",
       },
     },
   },

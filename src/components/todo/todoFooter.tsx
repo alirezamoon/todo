@@ -24,7 +24,7 @@ const TodoFooter = () => {
   }
 
   return (
-    <div className="transition-all px-2 sm:px-6 bg-gray-200 border border-gray-700 flex items-center justify-center min-h-[36px]">
+    <div className="px-2 sm:px-6 bg-gray-200 border border-gray-700 flex items-center justify-center min-h-[36px]">
       <div className="flex items-center justify-between  w-full sm:max-w-lg  lg:max-w-4xl text-xs text-gray-500 [&_.active]:font-bold [&_.active]:text-gray-700">
         <p>
           <span className="font-bold text-gray-700">
@@ -35,17 +35,13 @@ const TodoFooter = () => {
         <div>
           <button
             onClick={() => changeFilterHandler("all")}
-            className={`mr-2 duration-100 ${
-              filter === "all" ? "active" : "inactive"
-            }`}
+            className={`mr-2 ${filter === "all" ? "active" : "inactive"}`}
           >
             All
           </button>
           <button
             onClick={() => changeFilterHandler("active")}
-            className={`duration-100 ${
-              filter === "active" ? "active" : "inactive"
-            }`}
+            className={`${filter === "active" ? "active" : "inactive"}`}
           >
             Active
           </button>
