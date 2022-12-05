@@ -24,11 +24,14 @@ const todoSlice = createSlice({
     removeTodo(state, action) {
       let newTodoList = [...state.todoList]
       let newTodoListAll = [...state.todoListAll]
-      state.todoList = newTodoList.filter((todo) => todo.id !== action.payload)
-      state.todoListAll = newTodoListAll.filter(
-        (todo) => todo.id !== action.payload
+      state.todoList = newTodoList.filter(
+        (todo) => todo.id !== action.payload.id
       )
-      state.activeTodosNumber--
+      state.todoListAll = newTodoListAll.filter(
+        (todo) => todo.id !== action.payload.id
+      )
+
+      if (action.payload.status == "active") state.activeTodosNumber--
     },
     changeStatus(state, action) {
       let newTodoList = [...state.todoList]

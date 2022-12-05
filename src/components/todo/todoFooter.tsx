@@ -20,7 +20,7 @@ const TodoFooter = () => {
 
   const removeAllTodosHandler = () => {
     dispatch(removeDoneTodos())
-    toast.success("all todos has been removed.")
+    toast.success("all done todos has been removed.")
   }
 
   return (
