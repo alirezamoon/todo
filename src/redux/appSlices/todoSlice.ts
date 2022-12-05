@@ -21,6 +21,7 @@ const todoSlice = createSlice({
       state.todoListAll = [...state.todoListAll, action.payload]
       state.activeTodosNumber++
     },
+
     removeTodo(state, action) {
       let newTodoList = [...state.todoList]
       let newTodoListAll = [...state.todoListAll]
@@ -33,6 +34,7 @@ const todoSlice = createSlice({
 
       if (action.payload.status == "active") state.activeTodosNumber--
     },
+
     changeStatus(state, action) {
       let newTodoList = [...state.todoList]
       let newTodoListAll = [...state.todoListAll]
@@ -55,6 +57,7 @@ const todoSlice = createSlice({
       if (action.payload.status === "done") state.activeTodosNumber--
       else state.activeTodosNumber++
     },
+
     categorizeTodos(state, action) {
       let newTodoList = [...state.todoListAll]
       if (action.payload === "active")
@@ -62,6 +65,7 @@ const todoSlice = createSlice({
       state.todoList = newTodoList
       state.currentCategory = action.payload
     },
+
     removeDoneTodos(state) {
       let newTodoList = [...state.todoListAll]
       newTodoList = newTodoList.filter((todo) => todo.status === "active")

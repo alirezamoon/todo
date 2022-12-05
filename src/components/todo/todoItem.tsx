@@ -19,12 +19,12 @@ const TodoItem = ({ id, title, status }: TodoType) => {
 
   return (
     <div
-      className={`flex items-center justify-center h-full min-h-[48px]  duration-300 ease-in py-1 border-b border-gray-400 [&:last-child]:border-0 px-2 sm:px-6 ${
+      className={`flex items-center justify-center h-full min-h-[48px] duration-100 py-1 border-b border-gray-400 [&:last-child]:border-0 px-2 sm:px-6 ${
         status === "active" ? "bg-gray-100" : "bg-gray-300"
       }`}
     >
-      <div className="w-full sm:max-w-lg  lg:max-w-4xl flex items-center justify-between ">
-        <div className="flex items-center">
+      <div className="w-full sm:max-w-lg lg:max-w-4xl flex items-center justify-between ">
+        <div className="animate-addTodo flex items-center">
           <input
             type="checkbox"
             checked={status === "active" ? false : true}
@@ -38,7 +38,10 @@ const TodoItem = ({ id, title, status }: TodoType) => {
             {title}
           </p>
         </div>
-        <button onClick={removeTodoHandler} className="min-w-[16px]">
+        <button
+          onClick={removeTodoHandler}
+          className="min-w-[16px] animate-opacity"
+        >
           <img src="/assets/icons/remove.svg" />
         </button>
       </div>

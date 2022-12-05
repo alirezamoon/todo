@@ -24,7 +24,7 @@ const TodoFooter = () => {
   }
 
   return (
-    <div className="px-2 sm:px-6 bg-gray-200 border border-gray-700 flex items-center justify-center min-h-[36px]">
+    <div className="transition-all px-2 sm:px-6 bg-gray-200 border border-gray-700 flex items-center justify-center min-h-[36px]">
       <div className="flex items-center justify-between  w-full sm:max-w-lg  lg:max-w-4xl text-xs text-gray-500 [&_.active]:font-bold [&_.active]:text-gray-700">
         <p>
           <span className="font-bold text-gray-700">

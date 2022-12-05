@@ -8,6 +8,20 @@ module.exports = {
           main: "#907c74",
         },
       },
+      keyframes: {
+        addTodo: {
+          "0%": { opacity: 0, transform: "translateX(-500px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        opacity: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
+      animation: {
+        addTodo: "addTodo 1s ease-in-out",
+        opacity: "opacity 1s ease-in-out",
+      },
     },
   },
   plugins: [],
