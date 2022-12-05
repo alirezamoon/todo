@@ -19,7 +19,7 @@ const TodoItem = ({ id, title, status }: TodoType) => {
 
   return (
     <div
-      className={`flex items-center justify-center h-full min-h-[48px] border-b border-zinc-300 px-6 md:px-10 ${
+      className={`flex items-center justify-center h-full min-h-[48px] border-b border-gray-400 [&:last-child]:border-0 px-6 md:px-10 ${
         status === "active" ? "bg-gray-100" : "bg-gray-300"
       }`}
     >

@@ -15,7 +15,7 @@ const AddTodo = () => {
     } else {
       dispatch(addTodo({ id: Date.now(), title: todoValue, status: "active" }))
       setTodoValue("")
-      toast.success("todo added successfully.")
+      // toast.success("todo added successfully.")
     }
   }
 

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { RootState } from "src/redux/store"
 import AddTodo from "./addTodol"
+import TodoFooter from "./todoFooter"
 import TodoItem from "./todoItem"
 
 const Todo = () => {
@@ -12,6 +13,7 @@ const Todo = () => {
       <div>
         {todoList && todoList.map((todoItem) => <TodoItem {...todoItem} />)}
       </div>
+      <TodoFooter />
     </div>
   )
 }
